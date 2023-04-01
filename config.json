@@ -1,0 +1,11 @@
+{
+    "directory": "/path/to/directory",
+    "rename_file": {
+        "old_string": "new_string",
+        "another_old_string": "another_new_string"
+    },
+    "replace_content": {
+        "old_text": "new_text",
+        "another_old_text": "another_new_text"
+    }
+}
