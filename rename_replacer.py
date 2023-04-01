@@ -7,6 +7,10 @@ with open('config.json') as f:
 
 # Walk through directory and subdirectories
 for root, dirs, files in os.walk(config['directory']):
+    # Ignore hidden files and directories
+    files = [f for f in files if not f.startswith('.')]
+    dirs[:] = [d for d in dirs if not d.startswith('.')]
+    
     for filename in files:
         # Rename file if key-value pair is found in config
         for key, value in config['rename_file'].items():
