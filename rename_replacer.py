@@ -20,8 +20,12 @@ for root, dirs, files in os.walk(config['directory']):
                 filename = new_filename
 
         # Replace text within file if key-value pair is found in config
-        with open(os.path.join(root, filename)) as f:
-            file_contents = f.read()
+        try:
+            with open(os.path.join(root, filename), encoding="utf-8-sig") as f:
+                file_contents = f.read()
+        except Exception as e:
+            print(f"Failed to open file {os.path.join(root, filename)}: {str(e)}")
+            continue
         for key, value in config['replace_content'].items():
             file_contents = file_contents.replace(key, value)
         with open(os.path.join(root, filename), 'w') as f:
