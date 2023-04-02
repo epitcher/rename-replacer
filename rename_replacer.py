@@ -11,6 +11,13 @@ for root, dirs, files in os.walk(config['directory']):
     files = [f for f in files if not f.startswith('.')]
     dirs[:] = [d for d in dirs if not d.startswith('.')]
     
+    # Rename directories if key-value pair is found in config
+    for key, value in config['rename_file'].items():
+        if key in os.path.basename(root):
+            new_dirname = os.path.join(os.path.dirname(root), os.path.basename(root).replace(key, value))
+            os.rename(root, new_dirname)
+            root = new_dirname
+    
     for filename in files:
         # Rename file if key-value pair is found in config
         for key, value in config['rename_file'].items():
