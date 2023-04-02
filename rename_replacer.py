@@ -5,6 +5,14 @@ import json
 with open('config.json') as f:
     config = json.load(f)
 
+# Confirm that the user wants to run the script
+print("WARNING: This script is potentially destructive and may irreversibly modify files in the specified directory and its subdirectories. Do you want to continue?")
+print("We recommend version control be enabled prior to running")
+response = input("[y/N] > ")
+if response.lower() != 'y':
+    print("Exiting script.")
+    exit()
+
 # Walk through directory and subdirectories
 for root, dirs, files in os.walk(config['directory']):
     # Ignore hidden files and directories
