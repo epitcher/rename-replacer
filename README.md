@@ -37,6 +37,9 @@ This is a python script that can **rename files** and **replace text** within fi
 
 3. The script will walk through the configured directory and its subdirectories, and **rename files** and **replace text** within files based on the key-value pairs specified in the JSON config file.
 
+## Helpful stuff
+- `json_reverser.py` has been provided to flip around your `config.json` key-value pairs in the case you need to undo a rename. It creates a new `reversed_config.json` file which you can copy the content of and place into `config.json` 
+
 ## License
 This script is licensed under the MIT License. See the LICENSE file for more information.
 
