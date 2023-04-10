@@ -1,5 +1,7 @@
 # Directory Renamer and File Content Replacer
 
+[![pytest](https://github.com/epitcher/rename-replacer/actions/workflows/pytest.yml/badge.svg)](https://github.com/epitcher/rename-replacer/actions/workflows/pytest.yml)
+
 This is a python script that can **rename files** and **replace text** within files in a directory and its subdirectories, based on key-value pairs that you specify in a JSON configuration file.
 
 ## Prerequisites
