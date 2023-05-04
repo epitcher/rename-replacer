@@ -71,3 +71,6 @@ yarn.lock
 
 # Tailwind CSS output file
 app/static/css/output.css
+
+
+.coverage
